@@ -39,6 +39,43 @@
 		},
 		{
 			"type": "cppbuild",
+			"label": "C/C++: clang++ build active file for MacOS x86",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-std=c++17",
+				"-fdiagnostics-color=always",
+				"-Wall",
+				"-g",
+				"-mmacosx-version-min=12.1",
+				"*.cpp",
+				"-I${workspaceFolder}/dependencies/include",
+				"-L${workspaceFolder}/dependencies/library_macx86",
+				"${workspaceFolder}/dependencies/library_macx86/libglfw3.a",
+				"${workspaceFolder}/glad.c",
+				"-arch", "x86_64",
+				"-o",
+				"${workspaceFolder}/app", 
+				"-framework", "IOKit", 
+				"-framework", "CoreFoundation",
+				"-framework", "Foundation",
+				"-framework", "AppKit",
+				"-framework", "CoreGraphics",
+				"-Wno-deprecated"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"
+		},
+		{
+			"type": "cppbuild",
 			"label": "C/C++: g++ build active file for Windows",
 			"command": "g++",
 			"args": [

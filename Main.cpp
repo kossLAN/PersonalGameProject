@@ -71,8 +71,8 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-	// Create a GLFWwindow object of 800 by 800 pixels, naming it "YoutubeOpenGL"
-	GLFWwindow* window = glfwCreateWindow(width, height, "YoutubeOpenGL", NULL, NULL);
+	// Create a GLFWwindow object of 800 by 800 pixels, naming it "PersonalGameProject"
+	GLFWwindow* window = glfwCreateWindow(width, height, "PersonalGameProject", NULL, NULL);
 	// Error check if the window fails to create
 	if (window == NULL)
 	{
@@ -179,6 +179,10 @@ int main()
 		camera.Inputs(window);
 		// Updates and exports the camera matrix to the Vertex Shader
 		camera.updateMatrix(45.0f, 0.1f, 100.0f);
+
+		// Updates coords of camera into the title of the opengl window
+		glfwSetWindowTitle(window, ("Camera Position: " + std::to_string(camera.Position.x) + ", " + std::to_string(camera.Position.y) + ", " + std::to_string(camera.Position.z)).c_str());
+		
 
 
 		// Draws different meshes
