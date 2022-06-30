@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "Build & Launch MacOS ARM",
+      "preLaunchTask": "C/C++: clang++ build active file for MacOS",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/app",
+    },
+    {
+      "name": "Build & Debug Windows x86",
+      "preLaunchTask": "C/C++: g++ build active file for Windows",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/app.exe",
+      "MIMode": "gdb"
+    },
+  ]
+}
